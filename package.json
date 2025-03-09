@@ -1,0 +1,12 @@
+{
+  "name": "job-bot",
+  "version": "1.0.0",
+  "description": "An auto apply amazon job bot",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
