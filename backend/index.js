@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 import { startMonitoringJobs, stopMonitoringJobs, isJobMonitorRunning } from './src/monitorJobs.js';
 
 const app = express();
-const PORT = 8002;
+const PORT = 8082;
 const clients = new Set();
 
 app.use(cors());
@@ -110,7 +110,7 @@ wss.on('connection', (ws) => {
     });
     
     // Send welcome message
-    ws.send(JSON.stringify({ log: "Connected to Amazon Jobs Monitor" }));
+    ws.send(JSON.stringify({ log: "Connected to Amazon Jobs Monitor, Please add the links and positions to start" }));
 });
 
 // Health check interval for WebSocket connections

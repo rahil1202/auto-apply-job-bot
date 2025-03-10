@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Square, Loader, RefreshCw, Plus, X, AlertCircle } from 'lucide-react';
+import { Play, Square, Loader, RefreshCw, Plus, X, AlertCircle, Airplay } from 'lucide-react';
 
 // Use environment variables or a configuration file in production
-const API_URL = 'http://localhost:8002';
-const WS_URL = "ws://localhost:8002/ws";
+const API_URL = 'http://localhost:8082';
+const WS_URL = "ws://localhost:8082/ws";
 
 function App() {
   const [jobLinks, setJobLinks] = useState(['']);
@@ -401,7 +401,7 @@ function App() {
       <header className="bg-gradient-to-r from-blue-700 to-blue-500 text-white p-4 shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold flex items-center">
-            <RefreshCw className="mr-2" size={24} />
+            <Airplay size={24} className="mr-2" />
             Amazon Jobs Monitor
           </h1>
           <div className="flex items-center space-x-4">
@@ -464,6 +464,7 @@ function App() {
 
           <div className="bg-white rounded-lg shadow-md p-4">
             <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Positions to Monitor</h2>
+            <p className="text-sm text-gray-600 mb-2">Please copy paste proper job title as shown in the Amazon hiring link</p>
             <div className="space-y-3">
               {positions.map((position, index) => (
                 <div key={`position-${index}`} className="flex items-start space-x-2">
