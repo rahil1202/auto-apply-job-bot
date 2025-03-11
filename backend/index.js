@@ -154,7 +154,7 @@ app.post('/start', async (req, res) => {
     // Create configuration object
     const config = {
         USER_DATA_DIR: path.join(process.env.LOCALAPPDATA, 'Google', 'Chrome', 'User Data'),   // Path to Chrome user data
-        CHROME_PROFILES: ['Profile 11'],     // Chrome profile to use
+        CHROME_PROFILES: ['Profile 11', 'Profile 12', 'Default'],     // Chrome profile to use use one by one for multiple links
         REFRESH_INTERVAL: 30000,          // Refresh interval in ms
         TARGET_JOBS: targetPositions,     // User-provided positions
         AMAZON_JOBS_URL: jobLinks[0]      // User-provided job URL (first valid one)

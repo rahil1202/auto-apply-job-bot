@@ -83,7 +83,7 @@ const monitorJobs = async (config, logCallback) => {
                 }
                 
                 // If we reach here, no application was successful
-                await waitRandomTime(config.REFRESH_INTERVAL, 10000, "Waiting to retry");
+                await waitRandomTime(config.REFRESH_INTERVAL, 5000, "Waiting to retry");
                 
             } catch (error) {
                 console.error("Error during job search:", error.message);
@@ -140,7 +140,7 @@ async function setupPage(browser) {
 }
 
 async function checkForJobs(page, config) {
-    console.log("\n🔍 Checking for warehouse positions...");
+    console.log("\n🔍 Checking for ```" + config.TARGET_JOBS.join("```, ```") + "``` positions...");
     
     // Add a random delay to mimic human behavior
     await waitRandomTime(5000, 1000);
@@ -178,7 +178,7 @@ async function processJob(page, job, config) {
     console.log(`Processing: ${job.title}`);
     
     // Add random delay between processing jobs
-    await waitRandomTime(5000, 10000, "Waiting before next job");
+    await waitRandomTime(5000, 5000, "Waiting before next job");
     
     // Find and click on the job element
     const jobElements = await page.$$('.hvh-careers-emotion-1pll7m0');
